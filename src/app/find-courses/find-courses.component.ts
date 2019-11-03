@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
+import {CourseService} from '../course.service'
 
 @Component({
   selector: 'app-find-courses',
@@ -9,6 +10,7 @@ import {NgForm} from '@angular/forms';
 export class FindCoursesComponent implements OnInit {
 
   submit = false;
+  totalScore: any;
 
   certificates = [
     'NCS - National Senior Certificate.',
@@ -68,15 +70,62 @@ export class FindCoursesComponent implements OnInit {
     'Visual Arts'
   ];
 
-  constructor() { }
+  constructor(private serv: CourseService) { }
 
   ngOnInit() {
   }
 
   onSubmit(f: NgForm) {
     this.submit = true;
-    console.log(f.value);  // { first: '', last: '' }
-    console.log(f.valid);  // false
+    console.log(f.value);
+    this.total(f)
+    this.addCourse(f);
+  }
+  // getCourse(){
+  //   this.serv.getConfig()
+  //     .subscribe((data) => {
+  //       console.log(data);
+  //   })
+  // }
+
+  addCourse(f){
+    let score = {
+      aps_score: this.totalScore.toString()
+    }
+    let score1 = JSON.stringify(score);
+    console.log(score1)
+    this.serv.postConfig(score1).subscribe(data => {
+      console.log(data);
+    });
   }
 
+  total(f) {
+    this.totalScore = this.score(f.value.mark1) + this.score(f.value.mark2) +
+    this.score(f.value.mark3) + this.score(f.value.mark4) + this.score(f.value.mark5) +
+    this.score(f.value.mark6);
+    console.log(this.totalScore);
+  }
+
+  score(e) {
+    e = Number(e);
+    if (e && typeof e === "number" && e > -1) {
+        if(e >= 80) {
+          return 7;
+        } else if (e > 69 && e < 80) {
+           return 6;
+        } else if (e > 59 && e < 70) {
+          return 5;
+        } else if (e > 49 && e < 60) {
+          return 4;
+        } else if(e > 39 && e < 50) {
+          return 3;
+        } else if (e > 29 && e < 40) {
+           return 2;
+        } else if (e >= 0 && e < 30) {
+          return 1;
+        }
+    } else {
+      return 0;
+    }
+  }
 }

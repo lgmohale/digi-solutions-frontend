@@ -11,6 +11,8 @@ import { AboutPageComponent} from './about-page/about-page.component';
 import { ContactPageComponent} from './contact-page/contact-page.component';
 import { FindCoursesComponent } from './find-courses/find-courses.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ResultsComponent } from './results/results.component';
 
 const appRoutes: Routes = [
   { path: 'app', component: LandingPageComponent },
@@ -26,11 +28,13 @@ const appRoutes: Routes = [
     HeaderComponent,
     AboutPageComponent,
     ContactPageComponent,
-    FindCoursesComponent
+    FindCoursesComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     SlideshowModule,
     FormsModule,
     RouterModule.forRoot(

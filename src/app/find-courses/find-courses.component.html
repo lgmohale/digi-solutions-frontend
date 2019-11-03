@@ -4,7 +4,7 @@
 <div class="container-fluid" style="margin-top: -400px;">
   <div class="row">
     <div class="col-6">
-      <form class="row" style="line-height: 20%" #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+      <form class="row" style="line-height: 20%" #f="ngForm" (ngSubmit)="onSubmit(f);" novalidate>
         <h3 class="text-center col-12"><u>Extra Details</u></h3>
         <div class="form-group col-12">
           <label for="exampleFormControlInput1">Email address: <span>{{ email.value }}</span></label>
@@ -12,7 +12,7 @@
         </div>
         <div class="form-group col-12">
           <label for="exampleFormControlSelect1">Certificate Type:</label>
-          <select [class.danger]="(certType.touched &&!certType.valid) || (!email.valid && submit)" name="certType" [(ngModel)]="certificateid" required #certType="ngModel" class="custom-select form-control" id="exampleFormControlSelect1">
+          <select [class.danger]="(certType.touched &&!certType.valid) || (!certType.valid && submit)" name="certType" [(ngModel)]="certificateid" required #certType="ngModel" class="custom-select form-control" id="exampleFormControlSelect1">
               <option [ngValue]="certificate" disabled selected hidden>Select a certificate</option>
             <option *ngFor="let certificate of certificates" [ngValue]="certificate">{{certificate}}</option>
           </select>
@@ -22,7 +22,7 @@
           <label for="exampleFormControlSelect1">Subject Name</label>
           <div class="input-group-prepend">
               <span class="input-group-text"><i class="fa fa-book"></i></span>
-              <select [class.danger]="(subject1.touched && !subject1.valid) || (!email.valid && submit)" name="subject1" [(ngModel)]="subject1id" required #subject1="ngModel" class="form-control" id="exampleFormControlSelect1">
+              <select [class.danger]="(subject1.touched && !subject1.valid) || (!subject1.valid && submit)" name="subject1" [(ngModel)]="subject1id" required #subject1="ngModel" class="form-control" id="exampleFormControlSelect1">
                 <option [ngValue]="subject" disabled selected hidden>Select a subject</option>
                 <option *ngFor="let subject1 of subjects" [ngValue]="subject1">{{subject1}}</option>
               </select>
@@ -32,7 +32,7 @@
           <label for="exampleFormControlSelect1">Marks</label>
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="fa fa-percent"></i></span>
-            <input [class.danger]="(mark1.touched && !mark1.valid) || (!email.valid && submit)" type="text" name="mark1" ngModel required #mark1="ngModel" class="form-control" id="marks1" placeholder="e.g. over/100">
+            <input [class.danger]="(mark1.touched && !mark1.valid) || (!mark1.valid && submit)" type="text" name="mark1" ngModel required #mark1="ngModel" class="form-control" id="marks1" placeholder="e.g. over/100">
           </div>
         </div>
 
@@ -40,7 +40,7 @@
           <label for="exampleFormControlSelect1">Subject Name</label>
           <div class="input-group-prepend">
               <span class="input-group-text"><i class="fa fa-book"></i></span>
-              <select [class.danger]="(subject2.touched && !subject2.valid) || (!email.valid && submit)" name="subject2" [(ngModel)]="subject2id" required #subject2="ngModel" class="form-control" id="exampleFormControlSelect1">
+              <select [class.danger]="(subject2.touched && !subject2.valid) || (!subject2.valid && submit)" name="subject2" [(ngModel)]="subject2id" required #subject2="ngModel" class="form-control" id="exampleFormControlSelect1">
                 <option [ngValue]="subject" disabled selected hidden>Select a subject</option>
                 <option *ngFor="let subject2 of subjects" [ngValue]="subject2">{{subject2}}</option>
               </select>
@@ -50,7 +50,7 @@
           <label for="exampleFormControlSelect1">Marks</label>
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="fa fa-percent"></i></span>
-            <input [class.danger]="(mark2.touched && !mark2.valid) || (!email.valid && submit)" name="mark2" ngModel required #mark2="ngModel" class="form-control" id="marks" placeholder="e.g. over/100">
+            <input [class.danger]="(mark2.touched && !mark2.valid) || (!mark2.valid && submit)" name="mark2" ngModel required #mark2="ngModel" class="form-control" id="marks" placeholder="e.g. over/100">
           </div>
         </div>
 
@@ -58,7 +58,7 @@
           <label for="exampleFormControlSelect2">Subject Name</label>
           <div class="input-group-prepend">
               <span class="input-group-text"><i class="fa fa-book"></i></span>
-              <select [class.danger]="(subject3.touched && !subject3.valid) || (!email.valid && submit)" name="subject3" [(ngModel)]="subject3id" required #subject3="ngModel" class="form-control" id="exampleFormControlSelect1">
+              <select [class.danger]="(subject3.touched && !subject3.valid) || (!subject3.valid && submit)" name="subject3" [(ngModel)]="subject3id" required #subject3="ngModel" class="form-control" id="exampleFormControlSelect1">
                 <option [ngValue]="subject" disabled selected hidden>Select a subject</option>
                 <option *ngFor="let subject3 of subjects" [ngValue]="subject3">{{subject3}}</option>
               </select>
@@ -68,7 +68,7 @@
           <label for="exampleFormControlSelect1">Marks</label>
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="fa fa-percent"></i></span>
-            <input [class.danger]="(mark3.touched && !mark3.valid) || (!email.valid && submit)" name="mark3" ngModel required #mark3="ngModel" class="form-control" id="marks" placeholder="e.g. over/100">
+            <input [class.danger]="(mark3.touched && !mark3.valid) || (!mark3.valid && submit)" name="mark3" ngModel required #mark3="ngModel" class="form-control" id="marks" placeholder="e.g. over/100">
           </div>
         </div>
 
@@ -76,7 +76,7 @@
           <label for="exampleFormControlSelect1">Subject Name</label>
           <div class="input-group-prepend">
               <span class="input-group-text"><i class="fa fa-book"></i></span>
-              <select [class.danger]="(subject4.touched && !subject4.valid) || (!email.valid && submit)" name="subject4" [(ngModel)]="subject4id" required #subject4="ngModel" class="form-control" id="exampleFormControlSelect1">
+              <select [class.danger]="(subject4.touched && !subject4.valid) || (!subject4.valid && submit)" name="subject4" [(ngModel)]="subject4id" required #subject4="ngModel" class="form-control" id="exampleFormControlSelect1">
                 <option [ngValue]="subject" disabled selected hidden>Select a subject</option>
                 <option *ngFor="let subject4 of subjects" [ngValue]="subject4">{{subject4}}</option>
               </select>
@@ -86,7 +86,7 @@
           <label for="exampleFormControlSelect1">Marks</label>
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="fa fa-percent"></i></span>
-            <input [class.danger]="(mark4.touched && !mark4.valid) || (!email.valid && submit)" name="mark4" ngModel required #mark4="ngModel" class="form-control" id="marks" placeholder="e.g. over/100">
+            <input [class.danger]="(mark4.touched && !mark4.valid) || (!mark4.valid && submit)" name="mark4" ngModel required #mark4="ngModel" class="form-control" id="marks" placeholder="e.g. over/100">
           </div>
         </div>
 
@@ -94,7 +94,7 @@
           <label for="exampleFormControlSelect1">Subject Name</label>
           <div class="input-group-prepend">
               <span class="input-group-text"><i class="fa fa-book"></i></span>
-              <select [class.danger]="(subject5.touched && !subject5.valid) || (!email.valid && submit)" name="subject5" [(ngModel)]="subject5id" required #subject5="ngModel" class="form-control" id="exampleFormControlSelect1">
+              <select [class.danger]="(subject5.touched && !subject5.valid) || (!subject5.valid && submit)" name="subject5" [(ngModel)]="subject5id" required #subject5="ngModel" class="form-control" id="exampleFormControlSelect1">
                 <option [ngValue]="subject" disabled selected hidden>Select a subject</option>
                 <option *ngFor="let subject5 of subjects" [ngValue]="subject5">{{subject5}}</option>
               </select>
@@ -104,7 +104,7 @@
           <label for="exampleFormControlSelect1">Marks</label>
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="fa fa-percent"></i></span>
-            <input [class.danger]="(mark5.touched && !mark5.valid) || (!email.valid && submit)" name="mark5" ngModel required #mark5="ngModel" class="form-control" id="marks" placeholder="e.g. over/100">
+            <input [class.danger]="(mark5.touched && !mark5.valid) || (!mark5.valid && submit)" name="mark5" ngModel required #mark5="ngModel" class="form-control" id="marks" placeholder="e.g. over/100">
           </div>
         </div>
 
@@ -112,7 +112,7 @@
           <label for="exampleFormControlSelect1">Subject Name</label>
           <div class="input-group-prepend">
               <span class="input-group-text"><i class="fa fa-book"></i></span>
-              <select [class.danger]="(subject6.touched && !subject6.valid) || (!email.valid && submit)" name="subject6" [(ngModel)]="subject6id" required #subject6="ngModel" class="form-control" id="exampleFormControlSelect1">
+              <select [class.danger]="(subject6.touched && !subject6.valid) || (!subject6.valid && submit)" name="subject6" [(ngModel)]="subject6id" required #subject6="ngModel" class="form-control" id="exampleFormControlSelect1">
                 <option [ngValue]="subject" disabled selected hidden>Select a subject</option>
                 <option *ngFor="let subject6 of subjects" [ngValue]="subject6">{{subject6}}</option>
               </select>
@@ -122,7 +122,7 @@
           <label for="exampleFormControlSelect1">Marks</label>
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="fa fa-percent"></i></span>
-            <input [class.danger]="(mark6.touched && !mark6.valid) || (!email.valid && submit)" name="mark6" ngModel required #mark6="ngModel" class="form-control" id="marks" placeholder="e.g. over/100">
+            <input [class.danger]="(mark6.touched && !mark6.valid) || (!mark6.valid && submit)" name="mark6" ngModel required #mark6="ngModel" class="form-control" id="marks" placeholder="e.g. over/100">
           </div>
         </div>
 
