@@ -1,0 +1,12 @@
+.col-6 {
+    border: solid 1px grey;
+    background-color: white!important;
+    padding-top: 20px;
+    box-shadow: 10px 10px 8px 10px #888888;
+}
+.row {
+   background-color: white!important;
+}
+.danger {
+    border: solid 1px red;
+}

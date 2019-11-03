@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-right">
+  <a class="navbar-brand" href="#"><img class="logo" src="../../../assets/logo-red.jpg"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav mr-auto"></ul>
+    <ul class="navbar-nav navbar-right">
+      <li class="nav-item active">
+        <a class="nav-link text-danger" href="/app">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-danger" routerLink="/about" routerLinkActive="active">About Us</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-danger" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Our Services
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" routerLink="/find-courses" routerLinkActive="active">
+              <i class="fa fa-book"></i>Study - find courses</a>
+          <a class="dropdown-item" href="#">
+              <i class="fa fa-edit"></i>More actions - coming soon</a>
+        </div>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link text-danger" routerLink="/contact" routerLinkActive="active">Contact Us</a>
+        </li>
+    </ul>
+  </div>
+</nav>
+<!-- <nav>
+  <a routerLink="/crisis-center" routerLinkActive="active">Crisis Center</a>
+  <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
+</nav> -->
+<router-outlet></router-outlet>

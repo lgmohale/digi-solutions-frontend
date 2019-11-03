@@ -1,0 +1,75 @@
+<app-header></app-header>
+<div style="margin-bottom:25px">
+    <div style="display:block;" [style.width]="width">
+        <slideshow #slideshow (onClick)="testEvent($event)" [imageUrls]="imageUrls" [height]="height"
+            [minHeight]="minHeight" [arrowSize]="arrowSize" [showArrows]="showArrows" [disableSwiping]="disableSwiping"
+            [autoPlay]="autoPlay" [stopAutoPlayOnSlide]="stopAutoPlayOnSlide" [debug]="debug"
+            [backgroundSize]="backgroundSize" [backgroundPosition]="backgroundPosition"
+            [backgroundRepeat]="backgroundRepeat" [showDots]="showDots" [dotColor]="dotColor"
+            [showCaptions]="showCaptions" [captionColor]="captionColor" [captionBackground]="captionBackground"
+            [lazyLoad]="lazyLoad" [hideOnNoSlides]="hideOnNoSlides" [fullscreen]="fullscreen">
+        </slideshow>
+    </div>
+</div>
+<div id="overlay"></div>
+<div class="text-center text-white slide-show-caption">
+    <div *ngIf="slideshow.slideIndex === 0">
+        <h3>Welcome to Digi Solutions</h3>
+        <p class="caption">We lead the path to you career destination. We have the axe to cut the bush so
+            that we can pave a way to the right direction.
+        </p>
+        <button type="button" class="btn btn-default learn-more">Learn more</button>
+    </div>
+    <div *ngIf="slideshow.slideIndex === 1">
+        <h3>Life after matric</h3>
+        <p class="caption"> You finished your matric or you are still doing grade 11 and you are clueless what
+            you want to do after matric. You do not even know what do you qualify for. Do not hesitate,
+            you have come to the right place. Let us help you get all the answers you need.
+        </p>
+        <button type="button" class="btn btn-default learn-more">Learn more</button>
+    </div>
+</div>
+<div style="position: absolute; top: 650px;  z-index: 2;" class="container-fluid">
+    <div class="row">
+        <div class="col-6">
+            <img class="graduation" src="../../assets/graduation-995042_1920.jpg" />
+        </div>
+        <div class="col-6">
+            <h3 class="text-default">Education is the road to success</h3>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type
+                specimen book. It has survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was popularised in
+                the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                and more recently with desktop publishing software like Aldus PageMaker including
+                versions of Lorem Ipsum
+            </p>
+        </div>
+    </div>
+    <div style="margin-top: 80px;" class="row">
+        <div class="col-4 text-center">
+            <h4 class="text-default"><i style="margin-right: 5px" class="fa fa-road"></i>Know your path</h4>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            </p>
+        </div>
+        <div class="col-4 text-center">
+            <h4 class="text-default"><i style="margin-right: 5px" class="fa fa-book"></i>Study</h4>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing.
+            </p>
+        </div>
+        <div class="col-4 text-center">
+            <h4 class="text-default"><i style="margin-right: 5px" class="fa fa-graduation-cap"></i>Graduate</h4>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting.
+            </p>
+        </div>
+    </div>
+    <div class="text-center text-white"
+        style="min-height: 90px; background-color: grey; margin-top: 20px; padding-top: 20px">
+        <p>All rights reserved</p>
+    </div>
+</div>

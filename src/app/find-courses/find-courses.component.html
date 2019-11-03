@@ -1,0 +1,171 @@
+<app-header></app-header>
+<img src="../../assets/searching1.jpg" alt="Search" style="width: 100%; height: auto">
+
+<div class="container-fluid" style="margin-top: -400px;">
+  <div class="row">
+    <div class="col-6">
+      <form class="row" style="line-height: 20%" #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+        <h3 class="text-center col-12"><u>Extra Details</u></h3>
+        <div class="form-group col-12">
+          <label for="exampleFormControlInput1">Email address: <span>{{ email.value }}</span></label>
+          <input [class.danger]="(email.touched && !email.valid) || (!email.valid && submit)" name="email" ngModel required #email="ngModel" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" email>
+        </div>
+        <div class="form-group col-12">
+          <label for="exampleFormControlSelect1">Certificate Type:</label>
+          <select [class.danger]="(certType.touched &&!certType.valid) || (!email.valid && submit)" name="certType" [(ngModel)]="certificateid" required #certType="ngModel" class="custom-select form-control" id="exampleFormControlSelect1">
+              <option [ngValue]="certificate" disabled selected hidden>Select a certificate</option>
+            <option *ngFor="let certificate of certificates" [ngValue]="certificate">{{certificate}}</option>
+          </select>
+        </div>
+
+        <div class="form-group col-8">
+          <label for="exampleFormControlSelect1">Subject Name</label>
+          <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-book"></i></span>
+              <select [class.danger]="(subject1.touched && !subject1.valid) || (!email.valid && submit)" name="subject1" [(ngModel)]="subject1id" required #subject1="ngModel" class="form-control" id="exampleFormControlSelect1">
+                <option [ngValue]="subject" disabled selected hidden>Select a subject</option>
+                <option *ngFor="let subject1 of subjects" [ngValue]="subject1">{{subject1}}</option>
+              </select>
+          </div>
+        </div>
+        <div class="form-group col-4 mb-3">
+          <label for="exampleFormControlSelect1">Marks</label>
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-percent"></i></span>
+            <input [class.danger]="(mark1.touched && !mark1.valid) || (!email.valid && submit)" type="text" name="mark1" ngModel required #mark1="ngModel" class="form-control" id="marks1" placeholder="e.g. over/100">
+          </div>
+        </div>
+
+        <div class="form-group col-8">
+          <label for="exampleFormControlSelect1">Subject Name</label>
+          <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-book"></i></span>
+              <select [class.danger]="(subject2.touched && !subject2.valid) || (!email.valid && submit)" name="subject2" [(ngModel)]="subject2id" required #subject2="ngModel" class="form-control" id="exampleFormControlSelect1">
+                <option [ngValue]="subject" disabled selected hidden>Select a subject</option>
+                <option *ngFor="let subject2 of subjects" [ngValue]="subject2">{{subject2}}</option>
+              </select>
+          </div>
+        </div>
+        <div class="form-group col-4 mb-3">
+          <label for="exampleFormControlSelect1">Marks</label>
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-percent"></i></span>
+            <input [class.danger]="(mark2.touched && !mark2.valid) || (!email.valid && submit)" name="mark2" ngModel required #mark2="ngModel" class="form-control" id="marks" placeholder="e.g. over/100">
+          </div>
+        </div>
+
+        <div class="form-group col-8">
+          <label for="exampleFormControlSelect2">Subject Name</label>
+          <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-book"></i></span>
+              <select [class.danger]="(subject3.touched && !subject3.valid) || (!email.valid && submit)" name="subject3" [(ngModel)]="subject3id" required #subject3="ngModel" class="form-control" id="exampleFormControlSelect1">
+                <option [ngValue]="subject" disabled selected hidden>Select a subject</option>
+                <option *ngFor="let subject3 of subjects" [ngValue]="subject3">{{subject3}}</option>
+              </select>
+          </div>
+        </div>
+        <div class="form-group col-4 mb-3">
+          <label for="exampleFormControlSelect1">Marks</label>
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-percent"></i></span>
+            <input [class.danger]="(mark3.touched && !mark3.valid) || (!email.valid && submit)" name="mark3" ngModel required #mark3="ngModel" class="form-control" id="marks" placeholder="e.g. over/100">
+          </div>
+        </div>
+
+        <div class="form-group col-8">
+          <label for="exampleFormControlSelect1">Subject Name</label>
+          <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-book"></i></span>
+              <select [class.danger]="(subject4.touched && !subject4.valid) || (!email.valid && submit)" name="subject4" [(ngModel)]="subject4id" required #subject4="ngModel" class="form-control" id="exampleFormControlSelect1">
+                <option [ngValue]="subject" disabled selected hidden>Select a subject</option>
+                <option *ngFor="let subject4 of subjects" [ngValue]="subject4">{{subject4}}</option>
+              </select>
+          </div>
+        </div>
+        <div class="form-group col-4 mb-3">
+          <label for="exampleFormControlSelect1">Marks</label>
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-percent"></i></span>
+            <input [class.danger]="(mark4.touched && !mark4.valid) || (!email.valid && submit)" name="mark4" ngModel required #mark4="ngModel" class="form-control" id="marks" placeholder="e.g. over/100">
+          </div>
+        </div>
+
+        <div class="form-group col-8">
+          <label for="exampleFormControlSelect1">Subject Name</label>
+          <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-book"></i></span>
+              <select [class.danger]="(subject5.touched && !subject5.valid) || (!email.valid && submit)" name="subject5" [(ngModel)]="subject5id" required #subject5="ngModel" class="form-control" id="exampleFormControlSelect1">
+                <option [ngValue]="subject" disabled selected hidden>Select a subject</option>
+                <option *ngFor="let subject5 of subjects" [ngValue]="subject5">{{subject5}}</option>
+              </select>
+          </div>
+        </div>
+        <div class="form-group col-4 mb-3">
+          <label for="exampleFormControlSelect1">Marks</label>
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-percent"></i></span>
+            <input [class.danger]="(mark5.touched && !mark5.valid) || (!email.valid && submit)" name="mark5" ngModel required #mark5="ngModel" class="form-control" id="marks" placeholder="e.g. over/100">
+          </div>
+        </div>
+
+        <div class="form-group col-8">
+          <label for="exampleFormControlSelect1">Subject Name</label>
+          <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-book"></i></span>
+              <select [class.danger]="(subject6.touched && !subject6.valid) || (!email.valid && submit)" name="subject6" [(ngModel)]="subject6id" required #subject6="ngModel" class="form-control" id="exampleFormControlSelect1">
+                <option [ngValue]="subject" disabled selected hidden>Select a subject</option>
+                <option *ngFor="let subject6 of subjects" [ngValue]="subject6">{{subject6}}</option>
+              </select>
+          </div>
+        </div>
+        <div class="form-group col-4 mb-3">
+          <label for="exampleFormControlSelect1">Marks</label>
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-percent"></i></span>
+            <input [class.danger]="(mark6.touched && !mark6.valid) || (!email.valid && submit)" name="mark6" ngModel required #mark6="ngModel" class="form-control" id="marks" placeholder="e.g. over/100">
+          </div>
+        </div>
+
+        <!-- <div class="form-group">
+              <label for="exampleFormControlSelect2">Example multiple select</label>
+              <select multiple class="form-control" id="exampleFormControlSelect2">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Example textarea</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div> -->
+        
+        <div class="text-right" style="width: 100%;">
+          <button type="submit" class="btn btn-success" style="margin: 20px;" >Search</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-6">
+      <h3 class="text-center"><u>Note</u></h3>
+      <p>
+        Applicants will need to meet the minimum APS in order to be considered for a
+        specific programme. Generally, you get points for each matric subject you
+        write that you write an exam for.</p>
+
+      <p> This system calculate you APS before doing the search. </p>
+
+      <p> The system calculate APS by add your six best subjects, excluding Life Orientation.
+        The points you get for each subject will depend on the percentage you score in that
+        particular subject. The APS score is the total points you receive from each subject.</p>
+      <p>
+        Please note: meeting the bare minimum requirement is not always enough to get you
+        into your desired degree programme, so push hard to get the highest marks you possibly can.
+      </p>
+    </div>
+  </div>
+  <div class="text-center text-white"
+    style="min-height: 90px; background-color: grey; margin-top: 20px; padding-top: 20px">
+    <p>All rights reserved</p>
+  </div>
+</div>

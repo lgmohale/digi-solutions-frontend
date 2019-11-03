@@ -1,0 +1,39 @@
+body {
+    max-width: 100%!important;
+}
+#overlay {
+    position: relative; /* Sit on top of the page content */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 400px; /* Full height (cover the whole page) */
+    top: -425px; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-bottom: -425px;
+    background-color: rgba(0,0,0,0.8); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+  }
+
+  .slide-show-caption {
+      position: relative;
+      top: -250px;
+      margin-bottom: -700px;
+      opacity: 1!important;
+      z-index: 2;
+  }
+  .caption {
+      width: 60%!important;
+      margin: auto;
+  }
+  .learn-more {
+      background-color: white;
+      border: solid 1px green;
+      margin-top: 5px;
+    z-index: 2;
+  }
+
+  .graduation {
+      width: 90%;
+      height: auto;
+  }
