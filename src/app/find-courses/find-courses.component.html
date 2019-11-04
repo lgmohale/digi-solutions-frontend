@@ -177,46 +177,69 @@
     <div style="background-color: white!important; opacity: 1; z-index: 2; position: relative;">
       <h2>Your search criteria</h2>
       <p>MATRIC CERTIFICATE TYPE: {{ form.certType}}<p>
-        <p>YOUR APS SCORE: {{(score(form.mark1) + score(form.mark2) + score(form.mark3) +
+          <p>YOUR APS SCORE: {{(score(form.mark1) + score(form.mark2) + score(form.mark3) +
           score(form.mark4) + score(form.mark5) + score(form.mark6)) }}
-        </p>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Subject Name : {{form}}</th>
-            <th>Subject Mark (%)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{{form.subject1}}</td>
-            <td>{{form.mark1}}</td>
-          </tr>
-          <tr>
-            <td>{{form.subject2}}</td>
-            <td>{{form.mark2}}</td>
-          </tr>
-          <tr>
-            <td>{{form.subject3}}</td>
-            <td>{{form.mark3}}</td>
-          </tr>
-          <tr>
-            <td>{{form.subject4}}</td>
-            <td>{{form.mark4}}</td>
-          </tr>
-          <tr>
-            <td>{{form.subject5}}</td>
-            <td>{{form.mark5}}</td>
-          </tr>
-          <tr>
-            <td>{{form.subject6}}</td>
-            <td>{{form.mark6}}</td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="text-right" style="width: 100%;">
-          <a class="nav-link text-danger" href="/app"><button type="button" class="btn btn-success" (click)="isResults = false" style="margin: 20px;">Done</button></a>
-      </div>
+          </p>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Subject Name</th>
+                <th>Subject Mark (%)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{form.subject1}}</td>
+                <td>{{form.mark1}}</td>
+              </tr>
+              <tr>
+                <td>{{form.subject2}}</td>
+                <td>{{form.mark2}}</td>
+              </tr>
+              <tr>
+                <td>{{form.subject3}}</td>
+                <td>{{form.mark3}}</td>
+              </tr>
+              <tr>
+                <td>{{form.subject4}}</td>
+                <td>{{form.mark4}}</td>
+              </tr>
+              <tr>
+                <td>{{form.subject5}}</td>
+                <td>{{form.mark5}}</td>
+              </tr>
+              <tr>
+                <td>{{form.subject6}}</td>
+                <td>{{form.mark6}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="row">
+            <div *ngIf="returnedData" class="col-md-12 col-sm-12">
+              <h2>Results</h2>
+              <thead>
+                <tr class="row">
+                  <th class="col-md-6 col-sm-12">University Name</th>
+                  <th class="col-md-6 col-sm-12">Course Name</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="row" *ngFor="let data of returnedData; let i = index">
+                  <td class="col-md-6 col-sm-12">{{data.university_name}}</td>
+                  <td class="col-md-6 col-sm-12">{{data.course_name}}</td>
+                </tr>
+              </tbody>
+            </div>
+            <div *ngIf="!returnedData" class="col-md-12 col-sm-12">
+                <h2>Results</h2>
+                <h3>Found Nothing We Have</h3>
+                <p>SORRY, WE COULDN'T FIND ANY COURSES YOU QUALIFY IN".</p>
+              </div>
+          </div>
+          <div class="text-right" style="width: 100%;">
+            <a class="nav-link text-danger" href="/app"><button type="button" class="btn btn-success"
+                (click)="isResults = false" style="margin: 20px;">Done</button></a>
+          </div>
     </div>
   </div>
 

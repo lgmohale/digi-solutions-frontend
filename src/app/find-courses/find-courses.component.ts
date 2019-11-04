@@ -14,6 +14,7 @@ export class FindCoursesComponent implements OnInit {
 
   isResults = false;
   form: any;
+  returnedData:[];
 
   certificates = [
     'NCS - National Senior Certificate.',
@@ -82,7 +83,7 @@ export class FindCoursesComponent implements OnInit {
     this.submit = true;
     // console.log(f.value);
     // this.total(f)
-    // this.addCourse(f);
+    this.addCourse(f);
     this.form = f.value;
   }
   // getCourse(){
@@ -93,12 +94,18 @@ export class FindCoursesComponent implements OnInit {
   // }
 
   addCourse(f){
+    this.total(f);
     let score = {
       aps_score: this.totalScore.toString()
     }
     let score1 = JSON.stringify(score);
     console.log(score1)
     this.serv.postConfig(score1).subscribe(data => {
+      // data = [
+      //   {university_name: 'uj', course_name:'LO'},
+      //   {university_name: 'upe', course_name:'Maths'},
+      // ];
+      this.returnedData = data;
       console.log(data);
     });
   }
