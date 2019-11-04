@@ -13,6 +13,7 @@ export class FindCoursesComponent implements OnInit {
   totalScore: any;
 
   isResults = false;
+  form: any;
 
   certificates = [
     'NCS - National Senior Certificate.',
@@ -79,9 +80,10 @@ export class FindCoursesComponent implements OnInit {
 
   onSubmit(f: NgForm) {
     this.submit = true;
-    console.log(f.value);
-    this.total(f)
-    this.addCourse(f);
+    // console.log(f.value);
+    // this.total(f)
+    // this.addCourse(f);
+    this.form = f.value;
   }
   // getCourse(){
   //   this.serv.getConfig()
