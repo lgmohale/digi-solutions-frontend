@@ -12,6 +12,8 @@ export class FindCoursesComponent implements OnInit {
   submit = false;
   totalScore: any;
 
+  isResults = false;
+
   certificates = [
     'NCS - National Senior Certificate.',
     'SC HG - Senior Certificate Higher Grade.',
