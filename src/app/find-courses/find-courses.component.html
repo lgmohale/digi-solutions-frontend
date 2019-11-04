@@ -219,14 +219,22 @@
               <h2>Results</h2>
               <thead>
                 <tr class="row">
-                  <th class="col-md-6 col-sm-12">University Name</th>
-                  <th class="col-md-6 col-sm-12">Course Name</th>
+                  <th class="col-md-2 col-sm-12">University Name</th>
+                  <th class="col-md-2 col-sm-12">Course Name</th>
+                  <th class="col-md-2 col-sm-12">Cost of the cost</th>
+                  <th class="col-md-2 col-sm-12">Accommodation</th>
+                  <th class="col-md-2 col-sm-12">Accommodation cost</th>
+                  <th class="col-md-2 col-sm-12">University Website</th>
                 </tr>
               </thead>
               <tbody>
                 <tr class="row" *ngFor="let data of returnedData; let i = index">
-                  <td class="col-md-6 col-sm-12">{{data.university_name}}</td>
-                  <td class="col-md-6 col-sm-12">{{data.course_name}}</td>
+                  <td class="col-md-2 col-sm-12">{{data.university_name}}</td>
+                  <td class="col-md-2 col-sm-12">{{data.course_name}}</td>
+                  <td class="col-md-2 col-sm-12">{{data.course_cost}}</td>
+                  <td class="col-md-2 col-sm-12">{{data.accommodation}}</td>
+                  <td class="col-md-2 col-sm-12">{{data.accommodation_cost}}</td>
+                  <td class="col-md-2 col-sm-12">{{data.university_website}}</td>
                 </tr>
               </tbody>
             </div>
