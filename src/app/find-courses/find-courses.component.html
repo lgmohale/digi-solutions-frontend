@@ -215,28 +215,29 @@
             </tbody>
           </table>
           <div class="row">
-            <div *ngIf="returnedData" class="col-md-12 col-sm-12">
-              <h2>Results</h2>
-              <thead>
+            <h2>Results</h2>
+            <div *ngIf="returnedData" class="col-md-4 col-sm-4">
+              <img>
+              <!-- <thead>
                 <tr class="row">
                   <th class="col-md-2 col-sm-12">University Name</th>
                   <th class="col-md-2 col-sm-12">Course Name</th>
-                  <th class="col-md-2 col-sm-12">Cost of the cost</th>
+                  <th class="col-md-2 col-sm-12">Department Name</th>
+                  <th class="col-md-2 col-sm-12">Cost of Course</th>
                   <th class="col-md-2 col-sm-12">Accommodation</th>
                   <th class="col-md-2 col-sm-12">Accommodation cost</th>
-                  <th class="col-md-2 col-sm-12">University Website</th>
                 </tr>
               </thead>
               <tbody>
                 <tr class="row" *ngFor="let data of returnedData; let i = index">
                   <td class="col-md-2 col-sm-12">{{data.university_name}}</td>
                   <td class="col-md-2 col-sm-12">{{data.course_name}}</td>
+                  <td class="col-md-2 col-sm-12">{{data.course_faculty}}</td>
                   <td class="col-md-2 col-sm-12">{{data.course_cost}}</td>
-                  <td class="col-md-2 col-sm-12">{{data.accommodation}}</td>
-                  <td class="col-md-2 col-sm-12">{{data.accommodation_cost}}</td>
-                  <td class="col-md-2 col-sm-12">{{data.university_website}}</td>
+                  <td class="col-md-2 col-sm-12">{{data.res_name}}</td>
+                  <td class="col-md-2 col-sm-12">{{data.res_cost}}</td>
                 </tr>
-              </tbody>
+              </tbody> -->
             </div>
             <div *ngIf="!returnedData" class="col-md-12 col-sm-12">
                 <h2>Results</h2>
